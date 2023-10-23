@@ -2,19 +2,28 @@ version: "3.5"
 services:
   geth:
     build:
-      context: ./geth
+      context: geth
       args:
-        UPSTREAM_VERSION: v1.13.1
+        UPSTREAM_VERSION: v1.13.4
     volumes:
-      - "lukso:/lukso"
+      - "data:/data"
     ports:
-      - "33141:33141/tcp"
-      - "33141:33141/udp"
+      - "31403:31403/tcp"
+      - "31403:31403/udp"
     restart: unless-stopped
     environment:
-      - EXTRA_FLAGS
-      - P2P_PORT=33141
-      - SYNCMODE=snap
-    image: "geth.lukso-geth.dnp.dappnode.eth:0.1.0"
+      - GETH_HTTP=true
+      - GETH_HTTP_ADDR=0.0.0.0
+      - GETH_HTTP_CORSDOMAIN=*
+      - GETH_HTTP_VHOSTS=*
+      - GETH_SYNCMODE=snap
+      - GETH_WS=true
+      - GETH_WS_ADDR=0.0.0.0
+      - GETH_PORT=31403
+      - GETH_METRICS=true
+      - GETH_METRICS_ADDR=0.0.0.0
+      - GETH_STATE_SCHEME=path
+      - EXTRA_FLAGS="--http.api eth,engine,net,web3,txpool"
+    image: "geth.holesky-geth.dnp.dappnode.eth:0.1.0"
 volumes:
-  lukso: {}
+  data: {}

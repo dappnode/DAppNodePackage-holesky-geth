@@ -8,9 +8,6 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN apk update && apk add curl && \ 
     chmod +x /usr/local/bin/entrypoint.sh
 
-RUN mkdir /config
-
-# Get Lukso genesis for Geth
-RUN curl -L https://raw.githubusercontent.com/lukso-network/network-configs/main/mainnet/shared/genesis_42.json -o /config/genesis.json
+ENV GETH_AUTHRPC_ADDR=0.0.0.0 GETH_AUTHRPC_PORT=8551 GETH_AUTHRPC_VHOSTS=* DATADIR=/data
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
