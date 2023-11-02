@@ -1,8 +1,8 @@
-# LUKSO Geth Dappnode package
+# Holesky Geth Dappnode package
 
 [![Geth github](https://img.shields.io/badge/Geth-Github-blue.svg)](https://github.com/ethereum/go-ethereum)
 
-Dappnode Package for execution client Geth in LUKSO mainnet.
+Dappnode Package for execution client Geth in Holesky testnet.
 
 ## License
 
