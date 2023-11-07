@@ -16,6 +16,7 @@ services:
       - GETH_HTTP_ADDR=0.0.0.0
       - GETH_HTTP_CORSDOMAIN=*
       - GETH_HTTP_VHOSTS=*
+      - GETH_HTTP_API=eth,engine,net,web3,txpool
       - GETH_SYNCMODE=snap
       - GETH_WS=true
       - GETH_WS_ADDR=0.0.0.0
@@ -23,7 +24,7 @@ services:
       - GETH_METRICS=true
       - GETH_METRICS_ADDR=0.0.0.0
       - GETH_STATE_SCHEME=path
-      - EXTRA_FLAGS="--http.api eth,engine,net,web3,txpool"
+      - EXTRA_FLAGS=""
     image: "geth.holesky-geth.dnp.dappnode.eth:0.1.0"
 volumes:
   data: {}
