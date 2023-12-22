@@ -4,7 +4,7 @@ services:
     build:
       context: geth
       args:
-        UPSTREAM_VERSION: v1.13.4
+        UPSTREAM_VERSION: v1.13.8
     volumes:
       - "data:/data"
     ports:
@@ -16,7 +16,7 @@ services:
       - GETH_HTTP_ADDR=0.0.0.0
       - GETH_HTTP_CORSDOMAIN=*
       - GETH_HTTP_VHOSTS=*
-      - GETH_HTTP_API=eth,engine,net,web3,txpool
+      - "GETH_HTTP_API=eth,engine,net,web3,txpool"
       - GETH_SYNCMODE=snap
       - GETH_WS=true
       - GETH_WS_ADDR=0.0.0.0
