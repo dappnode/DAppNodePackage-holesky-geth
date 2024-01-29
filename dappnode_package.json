@@ -20,13 +20,13 @@
   "exposable": [
     {
       "name": "Holesky Geth JSON-RPC (HTTP)",
-      "description": "HTTP-JSON-RPC endpoint for Holesky testnet",
+      "description": "HTTP-JSON-RPC endpoint for the Holesky testnet",
       "serviceName": "geth",
       "port": 8545
     },
     {
       "name": "Holesky Geth JSON-RPC (WS)",
-      "description": "WS-JSON-RPC endpoint for LUKSO testnet",
+      "description": "WS-JSON-RPC endpoint for the Holesky testnet",
       "serviceName": "geth",
       "port": 8546
     }
