@@ -39,12 +39,6 @@
     "url": "https://github.com/dappnode/DAppNodePackage-holesky-geth/issues"
   },
   "license": "GPL-3.0",
-  "globalEnvs": [
-    {
-      "envs": ["CONSENSUS_CLIENT_HOLESKY"],
-      "services": ["geth"]
-    }
-  ],
   "requirements": {
     "minimumDappnodeVersion": "0.2.83"
   }
