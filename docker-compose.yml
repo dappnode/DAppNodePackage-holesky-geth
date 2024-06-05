@@ -4,19 +4,19 @@ services:
     build:
       context: geth
       args:
-        UPSTREAM_VERSION: v1.13.14
+        UPSTREAM_VERSION: v1.14.4
     volumes:
-      - "data:/data"
+      - data:/data
     ports:
-      - "31403:31403/tcp"
-      - "31403:31403/udp"
+      - 31403:31403/tcp
+      - 31403:31403/udp
     restart: unless-stopped
     environment:
       - GETH_HTTP=true
       - GETH_HTTP_ADDR=0.0.0.0
       - GETH_HTTP_CORSDOMAIN=*
       - GETH_HTTP_VHOSTS=*
-      - "GETH_HTTP_API=eth,engine,net,web3,txpool"
+      - GETH_HTTP_API=eth,engine,net,web3,txpool
       - GETH_SYNCMODE=snap
       - GETH_WS=true
       - GETH_WS_ADDR=0.0.0.0
@@ -25,6 +25,6 @@ services:
       - GETH_METRICS_ADDR=0.0.0.0
       - GETH_STATE_SCHEME=path
       - EXTRA_FLAGS
-    image: "geth.holesky-geth.dnp.dappnode.eth:0.1.0"
+    image: geth.holesky-geth.dnp.dappnode.eth:0.1.0
 volumes:
   data: {}
