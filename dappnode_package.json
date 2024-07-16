@@ -1,6 +1,6 @@
 {
   "name": "holesky-geth.dnp.dappnode.eth",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "upstreamVersion": "v1.14.7",
   "upstreamRepo": "ethereum/go-ethereum",
   "upstreamArg": "UPSTREAM_VERSION",
@@ -47,5 +47,8 @@
   ],
   "requirements": {
     "minimumDappnodeVersion": "0.2.83"
+  },
+  "warnings": {
+    "onMajorUpdate": "This major update requires a full resync of the blockchain data. It introduces a path-based schema, eliminating the need for pruning."
   }
 }
