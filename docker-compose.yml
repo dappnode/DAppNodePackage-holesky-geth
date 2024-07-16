@@ -6,7 +6,7 @@ services:
       args:
         UPSTREAM_VERSION: v1.14.7
     volumes:
-      - data:/data
+      - "data:/root/.ethereum"
     ports:
       - 31403:31403/tcp
       - 31403:31403/udp
