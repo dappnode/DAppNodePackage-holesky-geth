@@ -6,7 +6,7 @@ services:
       args:
         UPSTREAM_VERSION: v1.14.7
     volumes:
-      - "data:/root/.ethereum"
+      - data:/root/.ethereum
     ports:
       - 31403:31403/tcp
       - 31403:31403/udp
@@ -25,6 +25,6 @@ services:
       - GETH_METRICS_ADDR=0.0.0.0
       - GETH_STATE_SCHEME=path
       - EXTRA_FLAGS
-    image: geth.holesky-geth.dnp.dappnode.eth:0.1.0
+    image: geth.holesky-geth.dnp.dappnode.eth:1.0.0
 volumes:
   data: {}
